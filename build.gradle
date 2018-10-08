@@ -29,6 +29,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web:2.0.4.RELEASE')
     compile('org.springframework.security:spring-security-core:5.0.6.RELEASE')
     compile('org.springframework.boot:spring-boot-starter-tomcat:2.0.0.RELEASE')
+    compile('org.projectlombok:lombok:1.16.20')
     runtime('com.h2database:h2:1.4.196')
 
 }

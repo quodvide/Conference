@@ -20,8 +20,11 @@ public class ApiReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @GetMapping
-    public List<Reservation> getReservationList(LocalDate localDate) {
+    @GetMapping("/{date}")
+    public List<Reservation> getReservationList(@PathVariable String date) {
+        log.info("Reservation List Tried!");
+        log.info("Date is {}", date);
+        LocalDate localDate = LocalDate.parse(date);
         return reservationService.getAllList(localDate);
     }
 

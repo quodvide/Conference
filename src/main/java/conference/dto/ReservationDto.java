@@ -1,60 +1,48 @@
 package conference.dto;
 
+import conference.domain.ConferenceRoom;
 import conference.domain.Reservation;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
+@ToString
 public class ReservationDto {
 
+    final static int WEEK = 7;
+
+    private String roomName;
     private String username;
     private LocalDate day;
     private LocalTime startTime;
     private LocalTime endTime;
-    private String roomName;
     private int count;
 
-    public ReservationDto(String username, LocalDate day, LocalTime startTime, LocalTime endTime, String roomName, int count) {
+    public ReservationDto(String roomName, String username, LocalDate day, LocalTime startTime, LocalTime endTime, int count) {
+        this.roomName = roomName;
         this.username = username;
         this.day = day;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.roomName = roomName;
         this.count = count;
     }
 
-    public Reservation toReservation() {
-        return new Reservation();
-    }
-
-    public boolean isRedundant(List<Reservation> list) {
-        LocalTime tempStartTime;
-        LocalTime tempEndTime;
-        boolean redundantFlag = false;
-        for (int i = 0; i < list.size(); i++) {
-            redundantFlag = true;
-            tempStartTime = list.get(i).getStartTime();
-            tempEndTime = list.get(i).getEndTime();
-            if(startTime.isBefore(tempStartTime) && (endTime.isBefore(tempStartTime) || endTime.equals(tempStartTime))) {
-                redundantFlag = false;
-            }
-            if (endTime.isAfter(tempEndTime) && (startTime.isAfter(tempEndTime) || startTime.equals(tempEndTime))) {
-                redundantFlag = false;
-            }
-            if(redundantFlag) return redundantFlag;
+    public List<Reservation> toReservation(ConferenceRoom room) {
+        List<Reservation> list = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            list.add(new Reservation(this.username, this.day.plusDays(i*WEEK), this.startTime, this.endTime, room));
         }
-        return redundantFlag;
+        return list;
     }
 
-    public boolean isValid(List<Reservation> list) {
-        if(isRedundant(list) || isNotValidTime()) return false;
-        return true;
-    }
-
-    private boolean isNotValidTime() {
+    public boolean isNotValidTime() {
         if(startTime.getMinute()%30 != 0 || endTime.getMinute()%30 != 0) return true;
         return false;
     }

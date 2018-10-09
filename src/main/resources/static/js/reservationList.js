@@ -32,22 +32,36 @@ function onChangeDateListener(evt) {
 }
 
 function onSuccessGetReserve(response) {
-    var arr = new Array(48)
-    arr.forEach((v) => {
-        v = new Array(10);
-    })
-    arr.forEach((v) => {
-        v.forEach((v) => {
-            v = 1
-        console.log(v)
-        })
-    })
-    response.json().then((lists) => {
-            lists.forEach((reservation) => {
-                console.log("reservation : ", reservation)
+    clearTable("table");
+    response.json().then((reservationlists) => {
+            reservationlists.forEach((reservation) => {
+                insertReservationIntoTable(reservation);
             })
         })
-    console.log("success");
+    console.log("done");
+}
+
+function clearTable(id) {
+	var table = document.getElementById("table");
+    for(var i = 1; i<=48; i++) {
+        for(var j = 1; j<=10; j++) {
+            table.rows[i].cells[j].innerHTML = "";
+        }
+    }
+}
+
+function insertReservationIntoTable(reservation){
+	var table = document.getElementById("table");
+    var name = reservation.username;
+    var id = reservation.room.id;
+    var startTime = reservation.startTime;
+    var startIndex = startTime.substring(0,2)*2 + startTime.substring(3,5)/30;
+    var endTime = reservation.endTime;
+    var endIndex = endTime.substring(0,2)*2 + endTime.substring(3,5)/30;
+
+    for(var i = startIndex; i<endIndex; i++) {
+        table.rows[i + 1].cells[id].innerHTML = "<center>" + name + "</center>";
+    }
 }
 
 function onFailGetReserve() {

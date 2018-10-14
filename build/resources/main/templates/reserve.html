@@ -1,0 +1,52 @@
+{{#partial "content"}}
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms" style="font-family: 'Do Hyeon', sans-serif;">예약하기</h1>
+
+        <form role="form">
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="roomName">회의실 이름</label>
+                    <input type="name" class="form-control" id="roomName" placeholder="A ~ J">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="userName">예약자 성함</label>
+                    <input type="name" class="form-control" id="userName" placeholder="성함을 입력해주세요.">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="date">예약 일자</label>
+                    <input type="date" class="form-control" id="date" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="startTime">시작 시간</label>
+                    <input type="time" class="form-control" id="startTime">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="endTime">종료 시간</label>
+                    <input type="time" class="form-control" id="endTime">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="repeat">반복 횟수</label>
+                    <input type="number" value="1" class="form-control" min="1" id="repeat" placeholder="반복횟수를 입력해주세요.">
+                </div>
+            </div>
+            <button type="submit" id="reserve" class="form-control btn width10" style="background: #36bfb8; border-color: #36bfb8; color: white">예약하기</button>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+<script src="/js/reserve.js"></script>
+{{/partial}}
+{{>base}}
+

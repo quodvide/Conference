@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="conference.domain.ReservationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-10-14T20:37:07" hostname="SongMinSeokui-MacBook-Pro.local" time="0.04">
+  <properties/>
+  <testcase name="유효한_예약" classname="conference.domain.ReservationTest" time="0.04"/>
+  <testcase name="유효하지않은_예약" classname="conference.domain.ReservationTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

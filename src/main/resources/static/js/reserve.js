@@ -54,6 +54,7 @@ function onSuccessReserve() {
 }
 
 function onFailReserve() {
+    alert("올바른 값을 입력했는지 확인해주세요!");
     console.log("Reserve Failed");
 }
 

@@ -43,6 +43,7 @@ public class ReservationDto {
     }
 
     public boolean isNotValidTime() {
+        if (startTime.isAfter(endTime) || startTime.equals(endTime)) return true;
         if (startTime.getMinute() % 30 != 0 || endTime.getMinute() % 30 != 0) return true;
         return false;
     }

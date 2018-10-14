@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="conference.dto.ReservationDtoTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-10-14T20:37:07" hostname="SongMinSeokui-MacBook-Pro.local" time="0.003">
+  <properties/>
+  <testcase name="정상_시간정보" classname="conference.dto.ReservationDtoTest" time="0.001"/>
+  <testcase name="비정상_반복예약" classname="conference.dto.ReservationDtoTest" time="0.001"/>
+  <testcase name="비정상_시간정보" classname="conference.dto.ReservationDtoTest" time="0.0"/>
+  <testcase name="정상_반복예약" classname="conference.dto.ReservationDtoTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

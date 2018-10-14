@@ -27,7 +27,6 @@ public class ApiReservationController {
         LocalDate localDate = LocalDate.parse(date);
         List list = reservationService.getAllList(localDate);
         return ResponseEntity.ok().body(list);
-//        return reservationService.getAllList(localDate);
     }
 
     @PostMapping

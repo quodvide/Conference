@@ -37,13 +37,13 @@ public class ReservationDto {
     public List<Reservation> toReservation(ConferenceRoom room) {
         List<Reservation> list = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            list.add(new Reservation(this.username, this.day.plusDays(i*WEEK), this.startTime, this.endTime, room));
+            list.add(new Reservation(this.username, this.day.plusDays(i * WEEK), this.startTime, this.endTime, room));
         }
         return list;
     }
 
     public boolean isNotValidTime() {
-        if(startTime.getMinute()%30 != 0 || endTime.getMinute()%30 != 0) return true;
+        if (startTime.getMinute() % 30 != 0 || endTime.getMinute() % 30 != 0) return true;
         return false;
     }
 }

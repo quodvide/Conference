@@ -3,34 +3,41 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
         <h1 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms" style="font-family: 'Do Hyeon', sans-serif;">예약하기</h1>
+
         <form role="form">
             <div class="form-group">
                 <div class="input-group">
-                    <input type="name" class="form-control" id="roomName" placeholder="방이름을 입력해주세요.">
+                    <label for="roomName">회의실 이름</label>
+                    <input type="name" class="form-control" id="roomName" placeholder="A ~ J">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="name" class="form-control" id="userName" placeholder="예약자 성함을 입력해주세요.">
+                    <label for="userName">예약자 성함</label>
+                    <input type="name" class="form-control" id="userName" placeholder="성함을 입력해주세요.">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="date" class="form-control" id="date" value="" placeholder="예약일자를 입력해주세요.">
+                    <label for="date">예약 일자</label>
+                    <input type="date" class="form-control" id="date" value="">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="time" class="form-control" id="startTime" placeholder="시작시간를 입력해주세요.">
+                    <label for="startTime">시작 시간</label>
+                    <input type="time" class="form-control" id="startTime">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="time" class="form-control" id="endTime" placeholder="종료시간를 입력해주세요.">
+                    <label for="endTime">종료 시간</label>
+                    <input type="time" class="form-control" id="endTime">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
+                    <label for="repeat">반복 횟수</label>
                     <input type="number" value="1" class="form-control" min="1" id="repeat" placeholder="반복횟수를 입력해주세요.">
                 </div>
             </div>

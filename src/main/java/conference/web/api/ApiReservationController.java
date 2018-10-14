@@ -21,18 +21,20 @@ public class ApiReservationController {
     private ReservationService reservationService;
 
     @GetMapping("/{date}")
-    public List<Reservation> getReservationList(@PathVariable String date) {
+    public ResponseEntity<List<Reservation>> getReservationList(@PathVariable String date) {
         log.info("Reservation List Tried!");
         log.info("Date is {}", date);
         LocalDate localDate = LocalDate.parse(date);
-        return reservationService.getAllList(localDate);
+        List list = reservationService.getAllList(localDate);
+        return ResponseEntity.ok().body(list);
+//        return reservationService.getAllList(localDate);
     }
 
     @PostMapping
     public ResponseEntity<Void> reserve(@RequestBody ReservationDto reservationDto) {
         log.info("Reservation Tried");
         log.info("Dto : {}", reservationDto.toString());
-        if(reservationService.reserve(reservationDto)) {
+        if (reservationService.reserve(reservationDto)) {
             log.info("We returned OK");
             return ResponseEntity.ok().build();
         }

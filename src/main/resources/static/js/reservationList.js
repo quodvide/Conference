@@ -38,7 +38,7 @@ function onSuccessGetReserve(response) {
                 insertReservationIntoTable(reservation);
             })
         })
-    console.log("done");
+    console.log("Ajax Success");
 }
 
 function clearTable(id) {
@@ -65,11 +65,11 @@ function insertReservationIntoTable(reservation){
 }
 
 function onFailGetReserve() {
-    alert("no");
+    Console.log("Ajax Failed");
 }
 
-function setInputDate(_id){
-    var _dat = $(_id);
+function setInputDate(id){
+    var _dat = $(id);
     var hoy = new Date(),
         d = hoy.getDate(),
         m = hoy.getMonth()+1,

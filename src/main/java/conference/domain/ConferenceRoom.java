@@ -1,11 +1,13 @@
 package conference.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class ConferenceRoom {
 
     @Id
@@ -14,4 +16,8 @@ public class ConferenceRoom {
 
     @Column
     private String name;
+
+    public ConferenceRoom(String name) {
+        this.name = name;
+    }
 }

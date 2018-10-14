@@ -45,13 +45,13 @@ public class Reservation {
             redundantFlag = true;
             tempStartTime = list.get(i).getStartTime();
             tempEndTime = list.get(i).getEndTime();
-            if(startTime.isBefore(tempStartTime) && (endTime.isBefore(tempStartTime) || endTime.equals(tempStartTime))) {
+            if (startTime.isBefore(tempStartTime) && (endTime.isBefore(tempStartTime) || endTime.equals(tempStartTime))) {
                 redundantFlag = false;
             }
             if (endTime.isAfter(tempEndTime) && (startTime.isAfter(tempEndTime) || startTime.equals(tempEndTime))) {
                 redundantFlag = false;
             }
-            if(redundantFlag) return redundantFlag;
+            if (redundantFlag) return redundantFlag;
         }
         return redundantFlag;
     }

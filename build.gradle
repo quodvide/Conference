@@ -31,5 +31,5 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-tomcat:2.0.0.RELEASE')
     compile('org.projectlombok:lombok:1.16.20')
     runtime('com.h2database:h2:1.4.196')
-
+    testCompile('org.springframework.boot:spring-boot-starter-test:2.0.4.RELEASE')
 }
